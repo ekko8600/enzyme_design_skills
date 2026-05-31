@@ -1,0 +1,7 @@
+interface:
+  display_name: "Enzyme Design"
+  short_description: "AI-first dry-lab enzyme sequence design"
+  default_prompt: "Use $enzyme-design to create an AI-first dry-lab strategy and ranked sequence-design workflow for my enzyme objective."
+
+policy:
+  allow_implicit_invocation: true

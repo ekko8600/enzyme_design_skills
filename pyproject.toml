@@ -1,0 +1,31 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "enzyme-design"
+version = "0.1.0"
+description = "AI-first dry-lab enzyme-design skill with bundled literature intelligence runtime."
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "enzyme-design Contributors" }]
+dependencies = []
+
+[project.optional-dependencies]
+llm = ["openai>=1.0.0"]
+http = ["requests>=2.31.0"]
+parse = ["pypdf>=4.0.0"]
+test = ["pytest>=8.0.0"]
+all = ["openai>=1.0.0", "requests>=2.31.0", "pypdf>=4.0.0"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/enzyme_design"]
+
+[project.scripts]
+enzyme-design = "enzyme_design.cli:main"
+enzyme-literature-wiki = "enzyme_design.cli:main"
+literature-wiki = "enzyme_design.cli:main"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
